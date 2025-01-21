@@ -1,6 +1,6 @@
-# Maintainer: Stephan Raabe <mail@ml4w.com>
+# Maintainer:
 pkgname='my-ml4w-hyprland-git'
-pkgver=2.9.7.0.r0.g74ca505
+pkgver=2.9.7.4.r3.ge3e59ff
 pkgrel=1
 pkgdesc="[WIP] Customised version of the ML4W Dotfiles for Hyprland (original at https://github.com/mylinuxforwork/dotfiles. Intended to work with UWSM (Unified Wayland Session Manager) https://github.com/Vladimir-csp/uwsm, and without a display manager (no SDDM!)"
 arch=(any)
