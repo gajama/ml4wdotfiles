@@ -37,17 +37,19 @@ terminate_clients() {
 }
 
 if [[ "$1" == "exit" ]]; then
-  echo ":: Exit"
-  terminate_clients
-  sleep 0.5
-  hyprctl dispatch exit
-  sleep 2
+    echo ":: Exit"
+    if [[ -f "$FILE" ]]; then
+        rm $FILE
+    fi
+    sleep 0.5
+    uwsm stop -r
+    sleep 2
 fi
 
 if [[ "$1" == "lock" ]]; then
-  echo ":: Lock"
-  sleep 0.5
-  hyprlock
+    echo ":: Lock"
+    sleep 0.5
+    uwsm app -- hyprlock    
 fi
 
 if [[ "$1" == "reboot" ]]; then

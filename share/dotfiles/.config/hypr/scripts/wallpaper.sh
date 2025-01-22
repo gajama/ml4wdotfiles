@@ -95,7 +95,7 @@ if [ -f $wallpapereffect ]; then
         echo ":: Loading wallpaper $generatedversions/$effect-$wallpaperfilename with effect $effect"
         echo ":: Setting wallpaper with $used_wallpaper"
         touch $waypaperrunning
-        waypaper --wallpaper $used_wallpaper
+        uwsm app -- waypaper --wallpaper $used_wallpaper
     else
         echo ":: Wallpaper effect is set to off"
     fi
@@ -108,7 +108,7 @@ fi
 # -----------------------------------------------------
 
 echo ":: Execute pywal with $used_wallpaper"
-wal -q -i "$used_wallpaper"
+uwsm app -- wal -q -i "$used_wallpaper"
 source "$HOME/.cache/wal/colors.sh"
 
 # -----------------------------------------------------
@@ -129,8 +129,8 @@ killall -SIGUSR2 waybar
 # Update Pywalfox
 # -----------------------------------------------------
 
-if type pywalfox >/dev/null 2>&1; then
-    pywalfox update
+if type pywalfox > /dev/null 2>&1; then
+    uwsm app -- pywalfox update
 fi
 
 # -----------------------------------------------------

@@ -15,6 +15,7 @@ cat <<"EOF"
 EOF
 echo "for Hyprland"
 echo "by Stephan Raabe"
+echo "(customised version)"
 echo -e "${NONE}"
 
 echo "Version: $version"

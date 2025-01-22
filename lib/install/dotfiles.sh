@@ -34,12 +34,12 @@ source $install_directory/dotfiles/preparation.sh
 # -----------------------------------------------------
 # Install SDDM
 # -----------------------------------------------------
-source $install_directory/dotfiles/sddm.sh
+#source $install_directory/dotfiles/sddm.sh
 
 # -----------------------------------------------------
 # Install SDDM Theme
 # -----------------------------------------------------
-source $install_directory/dotfiles/sddm-theme.sh
+#source $install_directory/dotfiles/sddm-theme.sh
 
 # -----------------------------------------------------
 # Modify existing files before restore starts

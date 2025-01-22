@@ -89,7 +89,7 @@ _activate_dotfiles_folder() {
     echo
     if gum confirm "Do you want to exit your system now?"; then
         gum spin --spinner dot --title "Logout has started..." -- sleep 3
-        killall -9 Hyprland
+        uwsm stop -r
     elif [ $? -eq 130 ]; then
         exit 130
     else
