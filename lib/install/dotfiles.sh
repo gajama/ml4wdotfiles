@@ -31,7 +31,17 @@ source $install_directory/dotfiles/backup.sh
 # -----------------------------------------------------
 source $install_directory/dotfiles/preparation.sh
 
-# ----------------------------------------------------- 
+# -----------------------------------------------------
+# Install SDDM
+# -----------------------------------------------------
+#source $install_directory/dotfiles/sddm.sh
+
+# -----------------------------------------------------
+# Install SDDM Theme
+# -----------------------------------------------------
+#source $install_directory/dotfiles/sddm-theme.sh
+
+# -----------------------------------------------------
 # Modify existing files before restore starts
 # -----------------------------------------------------
 source $install_directory/dotfiles/before_restore.sh
