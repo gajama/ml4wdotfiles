@@ -5,7 +5,6 @@
 #
 running=$(pgrep -c nwg-dock-hyprla)
 
-
 config="$HOME/.config/gtk-3.0/settings.ini"
 if [ ! -f $HOME/.config/ml4w/settings/dock-disabled ]; then
     prefer_dark_theme="$(grep 'gtk-application-prefer-dark-theme' "$config" | sed 's/.*\s*=\s*//')"
