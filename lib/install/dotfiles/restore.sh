@@ -23,6 +23,8 @@ restore_arr=(
     ".config/hypr/conf/animation.conf"
     ".config/hypr/conf/decoration.conf"
     ".config/hypr/conf/window.conf"
+    ".config/uwsm/env"
+    ".config/uwsm/env-hyprland"
 )
 
 _writeToRestoreList() {

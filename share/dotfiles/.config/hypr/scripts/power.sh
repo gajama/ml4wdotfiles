@@ -15,14 +15,14 @@ if [[ "$1" == "exit" ]]; then
         rm $FILE
     fi
     sleep 0.5
-    hyprctl dispatch exit
+    uwsm stop -r
     sleep 2
 fi
 
 if [[ "$1" == "lock" ]]; then
     echo ":: Lock"
     sleep 0.5
-    hyprlock
+    uwsm app -- hyprlock    
 fi
 
 if [[ "$1" == "reboot" ]]; then
@@ -51,6 +51,6 @@ fi
 
 if [[ "$1" == "hibernate" ]]; then
     echo ":: Hibernate"
-    sleep 1
-    systemctl hibernate
+    sleep 1; 
+    systemctl hibernate    
 fi
