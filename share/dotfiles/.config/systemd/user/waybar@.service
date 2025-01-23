@@ -1,0 +1,20 @@
+[Unit]
+Description=Highly customizable Wayland bar for Sway and Wlroots based compositors.
+Documentation=https://github.com/Alexays/Waybar/wiki/
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=exec
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+EnvironmentFile=%h/.config/ml4w/settings/waybar-theme
+ExecStartPre=echo "Using file ${waybar_theme}"
+ExecStart=/usr/bin/waybar -c %h/.config/waybar/themes${waybar_theme}/config%i -s %h/.config/waybar/themes${waybar_style}/style%i.css
+ExecReload=kill -SIGUSR2 $MAINPID
+Restart=on-failure
+Slice=app-graphical.slice
+
+
+[Install]
+WantedBy=graphical-session.target
