@@ -54,12 +54,22 @@ IFS="~"
 input=$listNames2
 read -ra array <<<"$input"
 
-# -----------------------------------------------------
-# Set new theme by writing the theme information to ~/.config/ml4w/settings/waybar-theme.sh
-# -----------------------------------------------------
+
+# ----------------------------------------------------- 
+# Set new theme by writing the theme information to ~/.config/ml4w/settings/waybar-theme
+# ----------------------------------------------------- 
 if [ "$choice" ]; then
+    IFS=';' read -ra arrThemes <<< "${listThemes[$choice+1]}"
     echo "Loading waybar theme..."
-    echo "${listThemes[$choice + 1]}" >~/.config/ml4w/settings/waybar-theme.sh
-    ~/.config/waybar/launch.sh
+    echo -e "waybar_theme=${arrThemes[0]}\nwaybar_style=${arrThemes[1]}\n" > ~/.config/ml4w/settings/waybar-theme
+    configFile=~/.config/waybar/themes${arrThemes[0]}/config
+    cssFile=~/.config/waybar/themes${arrThemes[1]}/style
+    if [ ! -f $configFile-custom ]; then
+        cp $configFile $configFile-custom
+    fi
+    if [ ! -f $cssFile-custom.css ]; then
+        cp $cssFile.css $cssFile-custom.css
+    fi
+    systemctl restart --user waybar@-custom.service
     notify-send "Waybar Theme changed" "to ${array[$choice]}"
 fi
