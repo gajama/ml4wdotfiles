@@ -8,12 +8,13 @@ commands=(
     "hyprpaper"
     "hyprlock"
     "hypridle"
-    "hyprshade"
+    "hyprsunset"
     "wal"
     "gum"
     "wlogout"
     "magick"
     "waypaper"
+    "uwsm"
 )
 
 missing_commands=""

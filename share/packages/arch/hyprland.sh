@@ -15,4 +15,4 @@ packages=(
     "qt5-wayland"
     "qt6-wayland"
     "uwsm"
-)
+);

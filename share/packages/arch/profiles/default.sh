@@ -39,7 +39,7 @@ packages=(
     "swaync"
     "gvfs"
     "wlogout"
-    "hyprshade"
+    "hyprsunset"
     "waypaper"
     "grimblast-git"
     "bibata-cursor-theme-bin"
