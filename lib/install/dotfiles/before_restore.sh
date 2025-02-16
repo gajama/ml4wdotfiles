@@ -23,7 +23,6 @@ if [ -d ~/$dot_folder/.settings ]; then
         _move_folder ~/$dot_folder/.version ~/$dot_folder/.config/ml4w/version
         _move_folder ~/$dot_folder/.config/apps ~/$dot_folder/.config/ml4w/apps
         _move_folder ~/$dot_folder/.config/login ~/$dot_folder/.config/ml4w/login
-        _move_folder ~/$dot_folder/.config/sddm ~/$dot_folder/.config/ml4w/sddm
         _move_file ~/$dot_folder/.config/update.sh ~/$dot_folder/.config/ml4w/update.sh
         _move_file ~/$dot_folder/.config/uninstall.sh ~/$dot_folder/.config/ml4w/uninstall.sh
 
