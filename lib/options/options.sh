@@ -30,22 +30,6 @@ _checkCurrent() {
     fi
 }
 
-_checkSddm() {
-    if [ -f /etc/systemd/system/display-manager.service ]; then
-        echo "Enabled"
-    else
-        echo "Not enabled"
-    fi
-}
-
-_checkSddmTheme() {
-    if [ -d /usr/share/sddm/themes/sequoia ]; then
-        echo "Installed"
-    else
-        echo "Not installed"
-    fi
-}
-
 _checkPywalfox() {
     if [[ $(_isInstalled "python-pywalfox") == 0 ]]; then
         echo "Installed"
@@ -64,13 +48,12 @@ _selectCategory() {
     echo "If your desired package is not listed, you can install it with your package manager "
     echo "and set it as default application in the ML4W Settings App."
     echo
-    echo "- SDDM:" $(_checkSddm) "/ SDDM Theme:" $(_checkSddmTheme)
     echo "- Shell: "$SHELL "/ Terminal:" $(_checkCurrent terminal.sh)
     echo "- File manager:" $(_checkCurrent filemanager.sh)
     echo "- Browser:" $(_checkCurrent browser.sh)
     echo "- System monitor:" $(_checkCurrent system-monitor.sh)
     echo
-    category=$(gum choose "shell" "terminal" "file manager" "browser" "pywalfox" "system monitor" "more" "REBOOT" "CANCEL")
+    category=$(gum choose "shell" "terminal" "dock" "file manager" "browser" "pywalfox" "system monitor" "more" "REBOOT" "CANCEL")
     case ${category} in
         terminal)
             source $options_directory/options/terminal.sh
