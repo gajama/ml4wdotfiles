@@ -6,7 +6,7 @@
 #                           
 
 terminate_clients() {
-  TIMEOUT=60
+  TIMEOUT=5
   # Get a list of all client PIDs in the current Hyprland session
   client_pids=$(hyprctl clients -j | jq -r '.[] | .pid')
 
@@ -54,14 +54,14 @@ fi
 
 if [[ "$1" == "reboot" ]]; then
   echo ":: Reboot"
-  # terminate_clients
+  terminate_clients
   sleep 0.5
   systemctl reboot
 fi
 
 if [[ "$1" == "shutdown" ]]; then
   echo ":: Shutdown"
-  # terminate_clients
+  terminate_clients
   sleep 0.5
   systemctl poweroff
 fi
