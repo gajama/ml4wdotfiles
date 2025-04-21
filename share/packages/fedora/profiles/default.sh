@@ -49,7 +49,12 @@ packages=(
     "oh-my-posh"
     "NetworkManager-tui"
     "nwg-dock-hyprland"
+<<<<<<< HEAD
     "matugen"
     "wallust"
     "eza"
+=======
+    "power-profiles-daemon"
+    "matugen"
+>>>>>>> d1597dda (Add matugen)
 )
