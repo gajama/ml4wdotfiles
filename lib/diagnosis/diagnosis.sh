@@ -26,17 +26,13 @@ _folderExists() {
 }
 
 _commandExists "rofi" "rofi-wayland"
-_commandExists "dunst" "dunst"
 _commandExists "waybar" "waybar"
 _commandExists "hyprpaper" "hyprpaper"
 _commandExists "hyprlock" "hyprpaper"
 _commandExists "hypridle" "hyprpaper"
 _commandExists "hyprsunset" "hyprsunset"
-_commandExists "gum" "gum"
 _commandExists "wlogout" "wlogout"
-_commandExists "ags" "ags"
 _commandExists "magick" "imagemagick"
-_commandExists "figlet" "figlet"
 _commandExists "waypaper" "waypaper"
 _commandExists "uwsm" "uwsm"
 
