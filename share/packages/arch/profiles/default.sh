@@ -56,8 +56,5 @@ packages=(
     "loupe"
     "power-profiles-daemon"
     "matugen"
-<<<<<<< HEAD
     "wallust"
-=======
->>>>>>> d1597dda (Add matugen)
 )
