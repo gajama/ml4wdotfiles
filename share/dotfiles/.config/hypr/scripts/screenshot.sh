@@ -190,6 +190,7 @@ takescreenshot() {
 }
 
 takescreenshot_timer() {
+    timer
     sleep 1
     uwsm app -- grimblast --notify "$option_chosen" "$option_type_screenshot" $NAME
     if [ -f $HOME/$NAME ] ;then
