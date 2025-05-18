@@ -140,12 +140,6 @@ $HOME/.config/waybar/launch.sh
 $HOME/.config/nwg-dock-hyprland/launch.sh &
 
 # -----------------------------------------------------
-# Reload nwg-dock-hyprland
-# -----------------------------------------------------
-
-$HOME/.config/nwg-dock-hyprland/launch.sh &
-
-# -----------------------------------------------------
 # Update Pywalfox
 # -----------------------------------------------------
 
