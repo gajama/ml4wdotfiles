@@ -64,5 +64,7 @@ echo ":: Update complete"
 echo
 echo
 
+pkill -RTMIN+1 waybar
+
 echo "Press [ENTER] to close."
 read
