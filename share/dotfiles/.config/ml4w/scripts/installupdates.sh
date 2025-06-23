@@ -6,26 +6,16 @@
 #                                 /_/
 #
 
-sleep 1
-clear
-install_platform="$(cat ~/.config/ml4w/settings/platform.sh)"
-figlet -f smslant "Updates"
-echo
-
-# ------------------------------------------------------
-# Confirm Start
-# ------------------------------------------------------
-
-if gum confirm "DO YOU WANT TO START THE UPDATE NOW?"; then
-    echo
-    echo ":: Update started."
-elif [ $? -eq 130 ]; then
-    exit 130
-else
-    echo
-    echo ":: Update canceled."
-    exit
-fi
+# Check if command exists
+_checkCommandExists() {
+    cmd="$1"
+    if ! command -v "$cmd" >/dev/null; then
+        echo 1
+        return
+    fi
+    echo 0
+    return
+}
 
 _isInstalled() {
     package="$1"
@@ -47,29 +37,26 @@ _isInstalled() {
     return #false
 }
 
-# Check if platform is supported
-case $install_platform in
-    arch)
-        aur_helper="$(cat ~/.config/ml4w/settings/aur.sh)"
+# ------------------------------------------------------
+# Confirm Start
+# ------------------------------------------------------
 
         $aur_helper
 
-        if [[ $(_isInstalled "flatpak") == "0" ]]; then
-            flatpak upgrade
-        fi
-        ;;
-    fedora)
-        sudo dnf upgrade
-        if [[ $(_isInstalled "flatpak") == "0" ]]; then
-            flatpak upgrade
-        fi
-        ;;
-    *)
-        echo ":: ERROR - Platform not supported"
-        echo "Press [ENTER] to close."
-        read
-        ;;
-esac
+    if [[ $(_isInstalled "flatpak") == "0" ]]; then
+        flatpak update
+    fi
+# Fedora
+elif [[ $(_checkCommandExists "dnf") == 0 ]]; then
+    sudo dnf upgrade
+    if [[ $(_isInstalled "flatpak") == "0" ]]; then
+        flatpak update
+    fi
+else
+    echo ":: ERROR - Platform not supported"
+    echo "Press [ENTER] to close."
+    read
+fi
 
 notify-send "Update complete"
 echo
