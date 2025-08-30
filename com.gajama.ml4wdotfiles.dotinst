@@ -1,0 +1,14 @@
+{
+	"name": "Custom ML4W Dotfiles for Hyprland",
+	"id": "com.gajama.ml4wdotfiles",
+	"description": "",
+	"version":"2.0",
+	"author": "Gav Massingham",
+	"homepage": "",
+	"dependencies": "",
+	"source": ".ml4w-hyprland/dotfiles/",
+	"subfolder": "share/dotfiles",
+	"setupscript":"setup/setup-custom.sh",
+	"restore":[],
+	"settings":[]
+}
