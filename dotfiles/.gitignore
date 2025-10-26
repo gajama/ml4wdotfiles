@@ -1,3 +1,4 @@
 .config/hypr/scripts/hyprshade.sh
 .config/hypr/hyprland.conf
 .config/hypr/conf/custom.conf
+.config/hypr/conf/keybinding.conf
