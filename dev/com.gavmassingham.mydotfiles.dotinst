@@ -161,6 +161,16 @@
       "search":"autostart.conf",
       "value":"~/.config/ml4w-custom/autostart.conf",
       "template":"source = [VALUE]"
+    },
+      {
+      "type":"text",
+        "mode":"replacesingleline",
+      "title":"Use Custom Auotstart",
+      "file":".config/hypr/hyprland.conf",
+      "checkpoint":"Check",
+      "search":"ml4w.conf",
+      "value":"~/.config/ml4w-custom/ml4w.conf",
+      "template":"source = [VALUE]"
     }
         ]
 }
