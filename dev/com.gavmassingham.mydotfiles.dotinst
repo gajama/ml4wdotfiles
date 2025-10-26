@@ -141,6 +141,26 @@
       "search":"",
       "value":"firefox",
       "template":""
+    },
+    {
+      "type":"text",
+      "mode":"overwritefile",
+      "title":"Use Hyprsunset",
+      "file":".config/hypr/scripts/hyprshade.sh",
+      "checkpoint":"Check",
+      "search":"",
+      "value":"source ~/.config/ml4w-custom/hyprsunset.sh",
+      "template":""
+    },
+      {
+      "type":"text",
+        "mode":"replacesingleline",
+      "title":"Use Custom Auotstart",
+      "file":".config/hypr/hyprland.conf",
+      "checkpoint":"Check",
+      "search":"autostart.conf",
+      "value":"~/.config/ml4w-custom/autostart.conf",
+      "template":"source = [VALUE]"
     }
         ]
 }
